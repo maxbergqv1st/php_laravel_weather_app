@@ -65,6 +65,41 @@
         background: rgba(0, 0, 0, 0.05);
         color: white;
     }
+
+    /* Styling för alla text- och lösenordsfält */
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+        width: 100%; /* Tar upp hela bredden i kortet */
+        padding: 12px 15px;
+        margin: 10px 0; /* Ger lite luft mellan fälten */
+        display: inline-block;
+        border: 2px solid #eee; /* En subtil ram */
+        border-radius: 12px; /* Matchar kortets runda hörn */
+        box-sizing: border-box; /* Ser till att padding inte gör fältet bredare än 100% */
+        font-size: 16px;
+        transition: all 0.3s ease; /* Gör animationen mjuk */
+        outline: none; /* Tar bort Windows standard-ram */
+    }
+
+    /* Vad som händer när man klickar i fältet */
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="text"]:focus {
+        border-color: #4facfe; /* Färgen ändras till blå (samma som din gradient) */
+        box-shadow: 0 0 8px rgba(79, 172, 254, 0.3); /* Ger ett mjukt blått sken */
+        background-color: #fff;
+    }
+
+    /* Gör knappen lite bredare och snyggare också */
+    button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 </style>
 </head>
 <body>
@@ -74,6 +109,7 @@
                 <li><a href="/">Hem</a></li>
                 <li><a href="/om-oss">Om oss</a></li>
                 <li><a href="/welcome">Welcome</a></li>
+                <li><a href="/login">login</a></li>
             </ul>
         </nav>
     </header>
