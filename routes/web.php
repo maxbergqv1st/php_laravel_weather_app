@@ -26,6 +26,9 @@ Route::get('/register', [RegisterController::class, 'showRegister'])->name('regi
 // Ta emot och spara användaren (POST)
 Route::post('/register', [RegisterController::class, 'store']);
 
+use App\Http\Controllers\WeatherController;
+
+Route::get('/', [WeatherController::class, 'index']);
 
 
 

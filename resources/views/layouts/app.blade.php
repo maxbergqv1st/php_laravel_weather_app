@@ -21,13 +21,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         padding: 20px;
     }
 
     /* Menyn */
     header {
         background: rgba(255, 255, 255, 0.2);
-        padding: 10px 0;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
     }
 
     nav ul {
@@ -48,6 +51,11 @@
 
     nav ul li a:hover { color: #007bff; }
 
+    .search-container {
+        padding-top: 25px;
+        width: 300px;
+         border-radius: 20px;
+    }
     /* Väder-kortet (beåll som förut) */
     .weather-card {
         background: rgba(255, 255, 255, 0.9);
@@ -105,6 +113,7 @@
 <body>
     <header>
         <nav>
+            
             <ul>
             <li><a href="/">Hem</a></li>
             <li><a href="/om-oss">Om oss</a></li>
@@ -127,6 +136,14 @@
                 <li><a href="/register">Registrera</a></li>
             @endguest
         </ul>
+        <div class="search-container">
+            <form action="/" method="GET">
+                <input type="text" 
+                    name="city" 
+                    value="{{ request('city') }}" 
+                    placeholder="Skriv stad och tryck Enter..." 
+            </form>
+        </div>
         </nav>
     </header>
 
