@@ -3,7 +3,17 @@
 @section('content')
 <div class="weather-card">
     <h1>Skapa konto</h1>
-    <p class="desc">Börja hålla koll på vädret</p>
+    
+    {{-- Visa felmeddelanden om valideringen misslyckas --}}
+    @if ($errors->any())
+        <div style="color: #e3342f; margin-bottom: 1rem;">
+            <ul style="list-style: none; padding: 0;">
+                @foreach ($errors->all() as $error)
+                    <li>⚠️ {{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <form method="POST" action="/register">
         @csrf

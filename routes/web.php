@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController; 
 
 
 Route::get('/', function () {
@@ -10,19 +11,20 @@ Route::get('/', function () {
 });
 
 // LOGIN - Visa sidan
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
 
 
 // LOGIN - Hantera när användaren trycker på knappen
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [LoginController::class, 'login']);
 
 // LOGOUT
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+// Visa registreringsformuläret (GET)
+Route::get('/register', [RegisterController::class, 'showRegister'])->name('register');
 
-Route::get('/register', function () {
-    return view('register');
-});
+// Ta emot och spara användaren (POST)
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/welcome', function () {
     return view('welcome');

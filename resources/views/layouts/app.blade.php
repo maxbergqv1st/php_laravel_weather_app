@@ -106,11 +106,27 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/">Hem</a></li>
-                <li><a href="/om-oss">Om oss</a></li>
-                <li><a href="/welcome">Welcome</a></li>
-                <li><a href="/login">login</a></li>
-            </ul>
+            <li><a href="/">Hem</a></li>
+            <li><a href="/om-oss">Om oss</a></li>
+            <li><a href="/welcome">Welcome</a></li>
+
+            @auth
+                {{-- Detta visas bara när användaren är inloggad --}}
+                <li>
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" style="background: none; border: none; color: white; font-weight: bold; cursor: pointer; padding: 0; font-family: inherit; text-transform: none; letter-spacing: normal; width: auto; margin: 0;">
+                            Logga ut
+                        </button>
+                    </form>
+                </li>
+            @endauth
+
+            @guest
+                <li><a href="/login">Logga in</a></li>
+                <li><a href="/register">Registrera</a></li>
+            @endguest
+        </ul>
         </nav>
     </header>
 
