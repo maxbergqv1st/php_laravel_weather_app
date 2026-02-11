@@ -1,7 +1,8 @@
-@extends('layouts.app')
+{{-- resources/views/components/weather-card.blade.php --}}
+@props(['weather'])
 
-@section('content')
 <div class="weather-card">
+    @if($weather)
         <h1>{{ $weather['location']['name'] }} 📍</h1>
         <p class="desc">{{ $weather['current']['condition']['text'] }}</p>
         
@@ -16,6 +17,7 @@
             <div>💨 Vind: {{ $weather['current']['wind_kph'] }} km/h</div>
             <div>💧 Luftfuktighet: {{ $weather['current']['humidity'] }}%</div>
         </div>
-
+    @else
+        <p>Kunde inte ladda väderdata just nu. ☁️</p>
+    @endif
 </div>
-@endsection

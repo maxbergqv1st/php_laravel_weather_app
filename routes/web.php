@@ -26,8 +26,6 @@ Route::get('/register', [RegisterController::class, 'showRegister'])->name('regi
 // Ta emot och spara användaren (POST)
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+
 
 
