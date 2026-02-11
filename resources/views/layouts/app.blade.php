@@ -108,7 +108,7 @@
             <ul>
             <li><a href="/">Hem</a></li>
             <li><a href="/om-oss">Om oss</a></li>
-            <li><a href="/welcome">Welcome</a></li>
+            <!-- <li><a href="/welcome">Welcome</a></li> -->
 
             @auth
                 {{-- Detta visas bara när användaren är inloggad --}}
@@ -131,11 +131,11 @@
     </header>
 
     <main>
-        @yield('content') {{-- Här kommer innehållet från dina andra filer hamna! --}}
+        @yield('content') 
     </main>
 
     <footer>
-        <p>&copy; 2026 Mitt Projekt</p>
+        <p>&copy; 2026 Weather Api</p>
     </footer>
 </body>
 </html>

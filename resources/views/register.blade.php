@@ -4,7 +4,6 @@
 <div class="weather-card">
     <h1>Skapa konto</h1>
     
-    {{-- Visa felmeddelanden om valideringen misslyckas --}}
     @if ($errors->any())
         <div style="color: #e3342f; margin-bottom: 1rem;">
             <ul style="list-style: none; padding: 0;">
