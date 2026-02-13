@@ -138,10 +138,10 @@
         </ul>
         <div class="search-container">
             <form action="/" method="GET">
-                <input type="text" 
-                    name="city" 
-                    value="{{ request('city') }}" 
-                    placeholder="Skriv stad och tryck Enter..." 
+            <input type="text" 
+               name="city" 
+               value="{{ request('city') }}" 
+               placeholder="Skriv stad och tryck Enter..."> 
             </form>
         </div>
         </nav>

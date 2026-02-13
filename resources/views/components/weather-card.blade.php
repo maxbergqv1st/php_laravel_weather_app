@@ -3,6 +3,7 @@
 
 <div class="weather-card">
     @if($weather)
+        <h1>star</h1>
         <h1>{{ $weather['location']['name'] }} 📍</h1>
         <p class="desc">{{ $weather['current']['condition']['text'] }}</p>
         
