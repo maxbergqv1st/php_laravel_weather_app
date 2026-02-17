@@ -1,21 +1,19 @@
 @extends('layouts.app')
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('resources/css/weather.css') }}">
+@endpush
+
 @section('content')
-<div class="weather-card">
-        <h1>{{ $weather['location']['name'] }} 📍</h1>
-        <p class="desc">{{ $weather['current']['condition']['text'] }}</p>
-        
-        <div class="temp-section" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <img src="https:{{ $weather['current']['condition']['icon'] }}" alt="Väderikon">
-            <span style="font-size: 3rem; font-weight: bold;">
-                {{ round($weather['current']['temp_c']) }}°C
-            </span>
-        </div>
-
-        <div class="details" style="margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
-            <div>💨 Vind: {{ $weather['current']['wind_kph'] }} km/h</div>
-            <div>💧 Luftfuktighet: {{ $weather['current']['humidity'] }}%</div>
-        </div>
-
-</div>
+    <section class="weather-wheel">
+        @if($weather)
+            <x-weather-card :weather="$weather" />
+            
+            {{-- 
+                @foreach($weatherData as $data)
+                 <x-weather-card :weather="$data" />
+                @endforeach 
+            --}}
+        @endif
+    </section>
 @endsection

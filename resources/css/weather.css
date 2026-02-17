@@ -1,0 +1,42 @@
+/* Karusell-behållaren */
+.weather-wheel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory; /* Gör att korten "fastnar" rätt */
+    scrollbar-width: none; /* Döljer scrollbar i Firefox */
+}
+
+.weather-wheel::-webkit-scrollbar {
+    display: none; /* Döljer scrollbar i Chrome/Safari */
+}
+
+/* Själva kortet */
+.weather-card {
+    flex: 0 0 300px; /* Fast bredd för korten i hjulet */
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.temp-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.weather-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+}

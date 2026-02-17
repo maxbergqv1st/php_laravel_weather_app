@@ -9,10 +9,9 @@ class WeatherController extends Controller
 {
     public function index(Request $request)
     {
-        $city = $request->input('city', 'Halmstad'); 
-        $apiKey = env('WEATHER_API_KEY'); 
+        $city = $request->input('city', 'Halmstad', 'Stockholm', 'Miami');
+        $apiKey = env('WEATHER_API_KEY');
 
-        // Vi lägger till withoutVerifying() ifall din lokala dator har SSL-strul
         $response = Http::withoutVerifying()->get("https://api.weatherapi.com/v1/current.json", [
             'key' => $apiKey,
             'q' => $city,
@@ -21,7 +20,10 @@ class WeatherController extends Controller
 
         $weatherData = $response->json();
 
-        // Om API:et svarar med fel (t.ex. fel nyckel), sätt till null
+        // Denna rad visar datan snyggt längst upp på din webbsida i webbläsaren
+        // Ta bort eller kommentera ut denna när du är klar ( // dump($weatherData) )
+        dump($weatherData);
+
         if (!isset($weatherData['location'])) {
             $weatherData = null;
         }
