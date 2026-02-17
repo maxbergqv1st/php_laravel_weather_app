@@ -9,25 +9,32 @@ class WeatherController extends Controller
 {
     public function index(Request $request)
     {
-        $city = $request->input('city', 'Halmstad', 'Stockholm', 'Miami');
-        $apiKey = env('WEATHER_API_KEY');
+        $searchCity = $request->input('city');
 
-        $response = Http::withoutVerifying()->get("https://api.weatherapi.com/v1/current.json", [
+        if($searchCity) {
+           $citiesToFetch = [$searchCity];
+        } else {
+            $citiesToFetch = ['Halmstad', 'Stockholm', 'Miami'];
+        }
+
+        $apiKey = env('WEATHER_API_KEY');
+        $weatherData = [];
+
+        foreach ($citiesToFetch as $city) {
+            $response = Http::withoutVerifying()->get("https://api.weatherapi.com/v1/current.json", [
             'key' => $apiKey,
             'q' => $city,
             'lang' => 'sv'
         ]);
 
-        $weatherData = $response->json();
+        $data = $response->json();
 
-        // Denna rad visar datan snyggt längst upp på din webbsida i webbläsaren
-        // Ta bort eller kommentera ut denna när du är klar ( // dump($weatherData) )
-        // dump($weatherData);
-
-        if (!isset($weatherData['location'])) {
-            $weatherData = null;
-        }
+            if (isset($data['location'])) {
+                $weatherData[] = $data;
+            }
+        }  
 
         return view('landing', ['weather' => $weatherData]);
+    
     }
 }

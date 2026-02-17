@@ -2,6 +2,7 @@
 <section class="weather-card">
     <header>
         <h3>{{ $weather['location']['name'] }}</h3>
+        <p class="weather-type">{{ $weather['current']['condition']['text'] }}</p>
     </header>
     
     <div class="temp-main">
