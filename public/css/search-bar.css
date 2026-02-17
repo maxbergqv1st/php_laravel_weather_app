@@ -1,24 +1,29 @@
-/* .search-container input[type="text"] {
+.search-container input[type="text"] {
     width: 220px;
-    padding: 8px 14px;
-    border-radius: 20px;
-    border: none;
+    padding: 8px 24px;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0); /* osynlig border i viloläge */
     background: rgba(255, 255, 255, 0.25);
     color: white;
-    font-size: 14px;
+    font-size: 20px;
     outline: none;
     transition:
-        background 0.3s ease,
-        width 0.3s ease;
+        background 0.4s ease,
+        width 0.4s ease,
+        border-color 0.4s ease;
 }
 
 .search-container input[type="text"]::placeholder {
     color: rgba(255, 255, 255, 0.75);
+    transition: opacity 0.4s ease;
 }
 
 .search-container input[type="text"]:focus {
-    background: rgba(255, 255, 255, 0.4);
     width: 280px;
-    box-shadow: none;
-    border-color: transparent;
-} */
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.6); /* border tonar in vid fokus */
+}
+
+.search-container input[type="text"]:focus::placeholder {
+    opacity: 0; /* placeholder tonar ut när man skriver */
+}

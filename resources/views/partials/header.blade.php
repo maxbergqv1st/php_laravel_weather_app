@@ -1,9 +1,9 @@
 <header>
     <nav>
-        <div>
-            <x-nav-bar/>
-            <x-search-bar/>
-        </div>
+        <x-nav-bar/>
+    </nav>
+    <nav>
+        <x-search-bar/>
     </nav>
 </header>
 

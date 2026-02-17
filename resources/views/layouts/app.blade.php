@@ -6,6 +6,7 @@
     <title>Väderappen</title>
         <link rel="stylesheet" href="{{ asset('css/header.css') }}">
         <link rel="stylesheet" href="{{ asset('css/search-bar.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/nav-bar.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/weather-card.css') }}">
     @stack('styles')
