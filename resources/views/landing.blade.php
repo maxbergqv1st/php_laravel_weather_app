@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('resources/css/weather.css') }}">
-@endpush
-
 @section('content')
     <section class="weather-wheel">
         @if($weather)

@@ -1,5 +1,4 @@
 @props(['weather'])
-
 <section class="weather-card">
     <header>
         <h3>{{ $weather['location']['name'] }}</h3>

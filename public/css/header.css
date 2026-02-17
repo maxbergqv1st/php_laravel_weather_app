@@ -1,0 +1,23 @@
+header {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari-stöd */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}

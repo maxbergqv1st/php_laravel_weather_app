@@ -28,7 +28,6 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 use App\Http\Controllers\WeatherController;
 
-Route::get('/', [WeatherController::class, 'index']);
-
-
+// Route::get('/', [WeatherController::class, 'index']);
+Route::get('/', [WeatherController::class, 'index'])->name('home'); // ← lägg till ->name('home')
 

@@ -22,7 +22,7 @@ class WeatherController extends Controller
 
         // Denna rad visar datan snyggt längst upp på din webbsida i webbläsaren
         // Ta bort eller kommentera ut denna när du är klar ( // dump($weatherData) )
-        dump($weatherData);
+        // dump($weatherData);
 
         if (!isset($weatherData['location'])) {
             $weatherData = null;
